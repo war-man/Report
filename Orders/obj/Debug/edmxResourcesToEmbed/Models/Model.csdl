@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accounting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inv" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="chk" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="amtPaid" Type="Double" />
+    <Property Name="invAmt" Type="Double" />
+    <Property Name="disc" Type="Double" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Accounting" FromRole="Accounting" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Clients" FromRole="Clients" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Dispatch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vendor" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="dispatcher" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tech" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Dispatch" FromRole="Dispatch" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Divisions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Divisions" FromRole="Divisions" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="JobStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_JobStatus" FromRole="JobStatus" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.OrderMaterials" FromRole="Material" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="number" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="divisionId" Type="Int32" />
+    <Property Name="clientId" Type="Int32" />
+    <Property Name="priorityId" Type="Int32" />
+    <Property Name="requestId" Type="Int32" />
+    <Property Name="poNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="nte" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="jobSite" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="jobSiteContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="stateZip" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="siteRegion" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="problemType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="woDate" Type="DateTime" Precision="3" />
+    <Property Name="requestedBy" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+    <Property Name="jobstatusId" Type="Int32" />
+    <Property Name="dispatchedBy" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+    <Property Name="datePromised" Type="DateTime" Precision="3" />
+    <Property Name="dateCompleted" Type="DateTime" Precision="3" />
+    <Property Name="laborHours" Type="Double" />
+    <Property Name="vendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="techPhone" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="jobdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="dispatchId" Type="Int32" />
+    <Property Name="pmsId" Type="Int32" />
+    <Property Name="accountingId" Type="Int32" />
+    <Property Name="technicianId" Type="Int32" />
+    <Property Name="labor" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Accounting" Relationship="Self.FK_Order_Accounting" FromRole="Order" ToRole="Accounting" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK_Order_Clients" FromRole="Order" ToRole="Clients" />
+    <NavigationProperty Name="Dispatch" Relationship="Self.FK_Order_Dispatch" FromRole="Order" ToRole="Dispatch" />
+    <NavigationProperty Name="Divisions" Relationship="Self.FK_Order_Divisions" FromRole="Order" ToRole="Divisions" />
+    <NavigationProperty Name="JobStatus" Relationship="Self.FK_Order_JobStatus" FromRole="Order" ToRole="JobStatus" />
+    <NavigationProperty Name="PMS" Relationship="Self.FK_Order_PMS" FromRole="Order" ToRole="PMS" />
+    <NavigationProperty Name="Priority" Relationship="Self.FK_Order_Priority" FromRole="Order" ToRole="Priority" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK_Order_Requests" FromRole="Order" ToRole="Requests" />
+    <NavigationProperty Name="Technician" Relationship="Self.FK_Order_Technician" FromRole="Order" ToRole="Technician" />
+    <NavigationProperty Name="Paids" Relationship="Self.FK_Paids_Order" FromRole="Order" ToRole="Paids" />
+    <NavigationProperty Name="Totals" Relationship="Self.FK_Totals_Order" FromRole="Order" ToRole="Totals" />
+    <NavigationProperty Name="Material" Relationship="Self.OrderMaterials" FromRole="Order" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="Paids">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="inv" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="chk" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="amtPaid" Type="Double" />
+    <Property Name="invAmt" Type="Double" />
+    <Property Name="orderId" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Paids_Order" FromRole="Paids" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="PMS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ecoDispatch" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="etaPromise" Type="DateTime" Precision="3" />
+    <Property Name="techNTE" Type="Double" />
+    <Property Name="dispatchDate" Type="DateTime" Precision="3" />
+    <Property Name="dateComp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_PMS" FromRole="PMS" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Priority">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Priority" FromRole="Priority" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Requests" FromRole="Requests" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Technician">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="obtainedSig" Type="Boolean" />
+    <Property Name="notesFromTech" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="exceededNTE" Type="Boolean" />
+    <Property Name="ProblemFound" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="multipleCheckInOut" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Technician" FromRole="Technician" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Totals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="totalTechs" Type="Double" />
+    <Property Name="totalHours" Type="Double" />
+    <Property Name="trip" Type="Double" />
+    <Property Name="totalLabor" Type="Double" />
+    <Property Name="tax" Type="Double" />
+    <Property Name="totalItems" Type="Double" />
+    <Property Name="totalMaterials" Type="Double" />
+    <Property Name="taxMaterials" Type="Double" />
+    <Property Name="grandTotal" Type="Double" />
+    <Property Name="totalDiscount" Type="Double" />
+    <Property Name="toalThisPropsal" Type="Double" />
+    <Property Name="orderid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Totals_Order" FromRole="Totals" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_Order_Accounting">
+    <End Role="Accounting" Type="Self.Accounting" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounting">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="accountingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="clientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Dispatch">
+    <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dispatch">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="dispatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Divisions">
+    <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="divisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_JobStatus">
+    <End Role="JobStatus" Type="Self.JobStatus" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="jobstatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_PMS">
+    <End Role="PMS" Type="Self.PMS" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PMS">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="pmsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Priority">
+    <End Role="Priority" Type="Self.Priority" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priority">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="priorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Requests">
+    <End Role="Requests" Type="Self.Requests" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="requestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Technician">
+    <End Role="Technician" Type="Self.Technician" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technician">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="technicianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paids_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="Paids" Type="Self.Paids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Paids">
+        <PropertyRef Name="orderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Totals_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Totals" Type="Self.Totals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Totals">
+        <PropertyRef Name="orderid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderMaterials">
+    <End Role="Material" Type="Self.Material" Multiplicity="*" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ReportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounting" EntityType="Self.Accounting" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Dispatch" EntityType="Self.Dispatch" />
+    <EntitySet Name="Divisions" EntityType="Self.Divisions" />
+    <EntitySet Name="JobStatus" EntityType="Self.JobStatus" />
+    <EntitySet Name="Material" EntityType="Self.Material" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="Paids" EntityType="Self.Paids" />
+    <EntitySet Name="PMS" EntityType="Self.PMS" />
+    <EntitySet Name="Priority" EntityType="Self.Priority" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Technician" EntityType="Self.Technician" />
+    <EntitySet Name="Totals" EntityType="Self.Totals" />
+    <AssociationSet Name="FK_Order_Accounting" Association="Self.FK_Order_Accounting">
+      <End Role="Accounting" EntitySet="Accounting" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Clients" Association="Self.FK_Order_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Dispatch" Association="Self.FK_Order_Dispatch">
+      <End Role="Dispatch" EntitySet="Dispatch" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Divisions" Association="Self.FK_Order_Divisions">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_JobStatus" Association="Self.FK_Order_JobStatus">
+      <End Role="JobStatus" EntitySet="JobStatus" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_PMS" Association="Self.FK_Order_PMS">
+      <End Role="PMS" EntitySet="PMS" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Priority" Association="Self.FK_Order_Priority">
+      <End Role="Priority" EntitySet="Priority" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Requests" Association="Self.FK_Order_Requests">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Technician" Association="Self.FK_Order_Technician">
+      <End Role="Technician" EntitySet="Technician" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paids_Order" Association="Self.FK_Paids_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Paids" EntitySet="Paids" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Totals_Order" Association="Self.FK_Totals_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Totals" EntitySet="Totals" />
+    </AssociationSet>
+    <AssociationSet Name="OrderMaterials" Association="Self.OrderMaterials">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

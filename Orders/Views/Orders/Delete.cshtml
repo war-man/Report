@@ -1,0 +1,243 @@
+﻿@model Orders.Models.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Order</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Divisions.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Divisions.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clients.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clients.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Priority.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Priority.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Requests.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Requests.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.poNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.poNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nte)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nte)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jobSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jobSite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jobSiteContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jobSiteContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.adress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.adress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.city)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.city)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stateZip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stateZip)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.siteRegion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.siteRegion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.problemType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.problemType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.woDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.woDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.requestedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.requestedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.JobStatus.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JobStatus.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dispatchedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dispatchedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.datePromised)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datePromised)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dateCompleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dateCompleted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.laborHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.laborHours)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.vendor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.vendor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.techPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.techPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jobdescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jobdescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Dispatch.vendor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dispatch.vendor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PMS.ecoDispatch)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PMS.ecoDispatch)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Accounting.inv)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Accounting.inv)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Technician.notesFromTech)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Technician.notesFromTech)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.labor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.labor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.notes)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

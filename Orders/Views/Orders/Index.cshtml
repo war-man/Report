@@ -1,0 +1,219 @@
+﻿@model IEnumerable<Orders.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Divisions.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requests.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobSite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobSiteContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stateZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siteRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.problemType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.woDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.requestedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobStatus.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dispatchedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datePromised)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateCompleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.laborHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vendor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.techPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jobdescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dispatch.vendor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PMS.ecoDispatch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accounting.inv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Technician.notesFromTech)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.labor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Divisions.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clients.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requests.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobSite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobSiteContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stateZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siteRegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.problemType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.woDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.requestedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobStatus.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dispatchedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datePromised)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateCompleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.laborHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.techPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jobdescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dispatch.vendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PMS.ecoDispatch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accounting.inv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Technician.notesFromTech)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.labor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <group Text="Orders">
+    <item Text="Orders" NavigateUrl="~/Home/Index"/>
+    <item Text="New Order" NavigateUrl="~/Orders/Create"/>
+    </group>
+  <group Text="Entities">
+    <item Text="Divisions" NavigateUrl="~/Divisions/Index"/>
+    <item Text="SQL Server 2008" />
+    <item Text="SQL Server 2008 R2" />
+  </group>
+  
+</menu>

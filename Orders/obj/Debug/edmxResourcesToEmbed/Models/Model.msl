@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReportModelStoreContainer" CdmEntityContainer="ReportEntities">
+    <EntitySetMapping Name="Accounting">
+      <EntityTypeMapping TypeName="ReportModel.Accounting">
+        <MappingFragment StoreEntitySet="Accounting">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="inv" ColumnName="inv" />
+          <ScalarProperty Name="chk" ColumnName="chk" />
+          <ScalarProperty Name="amtPaid" ColumnName="amtPaid" />
+          <ScalarProperty Name="invAmt" ColumnName="invAmt" />
+          <ScalarProperty Name="disc" ColumnName="disc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="ReportModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dispatch">
+      <EntityTypeMapping TypeName="ReportModel.Dispatch">
+        <MappingFragment StoreEntitySet="Dispatch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="dispatcher" ColumnName="dispatcher" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tech" ColumnName="tech" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="ReportModel.Divisions">
+        <MappingFragment StoreEntitySet="Divisions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobStatus">
+      <EntityTypeMapping TypeName="ReportModel.JobStatus">
+        <MappingFragment StoreEntitySet="JobStatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material">
+      <EntityTypeMapping TypeName="ReportModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="ReportModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="divisionId" ColumnName="divisionId" />
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+          <ScalarProperty Name="priorityId" ColumnName="priorityId" />
+          <ScalarProperty Name="requestId" ColumnName="requestId" />
+          <ScalarProperty Name="poNumber" ColumnName="poNumber" />
+          <ScalarProperty Name="nte" ColumnName="nte" />
+          <ScalarProperty Name="jobSite" ColumnName="jobSite" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="jobSiteContact" ColumnName="jobSiteContact" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="stateZip" ColumnName="stateZip" />
+          <ScalarProperty Name="siteRegion" ColumnName="siteRegion" />
+          <ScalarProperty Name="problemType" ColumnName="problemType" />
+          <ScalarProperty Name="woDate" ColumnName="woDate" />
+          <ScalarProperty Name="requestedBy" ColumnName="requestedBy" />
+          <ScalarProperty Name="jobstatusId" ColumnName="jobstatusId" />
+          <ScalarProperty Name="dispatchedBy" ColumnName="dispatchedBy" />
+          <ScalarProperty Name="datePromised" ColumnName="datePromised" />
+          <ScalarProperty Name="dateCompleted" ColumnName="dateCompleted" />
+          <ScalarProperty Name="laborHours" ColumnName="laborHours" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="techPhone" ColumnName="techPhone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="jobdescription" ColumnName="jobdescription" />
+          <ScalarProperty Name="dispatchId" ColumnName="dispatchId" />
+          <ScalarProperty Name="pmsId" ColumnName="pmsId" />
+          <ScalarProperty Name="accountingId" ColumnName="accountingId" />
+          <ScalarProperty Name="technicianId" ColumnName="technicianId" />
+          <ScalarProperty Name="labor" ColumnName="labor" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paids">
+      <EntityTypeMapping TypeName="ReportModel.Paids">
+        <MappingFragment StoreEntitySet="Paids">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="inv" ColumnName="inv" />
+          <ScalarProperty Name="chk" ColumnName="chk" />
+          <ScalarProperty Name="amtPaid" ColumnName="amtPaid" />
+          <ScalarProperty Name="invAmt" ColumnName="invAmt" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMS">
+      <EntityTypeMapping TypeName="ReportModel.PMS">
+        <MappingFragment StoreEntitySet="PMS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ecoDispatch" ColumnName="ecoDispatch" />
+          <ScalarProperty Name="etaPromise" ColumnName="etaPromise" />
+          <ScalarProperty Name="techNTE" ColumnName="techNTE" />
+          <ScalarProperty Name="dispatchDate" ColumnName="dispatchDate" />
+          <ScalarProperty Name="dateComp" ColumnName="dateComp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priority">
+      <EntityTypeMapping TypeName="ReportModel.Priority">
+        <MappingFragment StoreEntitySet="Priority">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="ReportModel.Requests">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ReportModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Technician">
+      <EntityTypeMapping TypeName="ReportModel.Technician">
+        <MappingFragment StoreEntitySet="Technician">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="obtainedSig" ColumnName="obtainedSig" />
+          <ScalarProperty Name="notesFromTech" ColumnName="notesFromTech" />
+          <ScalarProperty Name="exceededNTE" ColumnName="exceededNTE" />
+          <ScalarProperty Name="ProblemFound" ColumnName="ProblemFound" />
+          <ScalarProperty Name="multipleCheckInOut" ColumnName="multipleCheckInOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Totals">
+      <EntityTypeMapping TypeName="ReportModel.Totals">
+        <MappingFragment StoreEntitySet="Totals">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="totalTechs" ColumnName="totalTechs" />
+          <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+          <ScalarProperty Name="trip" ColumnName="trip" />
+          <ScalarProperty Name="totalLabor" ColumnName="totalLabor" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="totalItems" ColumnName="totalItems" />
+          <ScalarProperty Name="totalMaterials" ColumnName="totalMaterials" />
+          <ScalarProperty Name="taxMaterials" ColumnName="taxMaterials" />
+          <ScalarProperty Name="grandTotal" ColumnName="grandTotal" />
+          <ScalarProperty Name="totalDiscount" ColumnName="totalDiscount" />
+          <ScalarProperty Name="toalThisPropsal" ColumnName="toalThisPropsal" />
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="OrderMaterials" TypeName="ReportModel.OrderMaterials" StoreEntitySet="OrderMaterials">
+      <EndProperty Name="Material">
+        <ScalarProperty Name="id" ColumnName="materialtid" />
+      </EndProperty>
+      <EndProperty Name="Order">
+        <ScalarProperty Name="id" ColumnName="orderId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

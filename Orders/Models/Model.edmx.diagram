@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be1ab5a9387b484c9306c0e758fd336b" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="ReportModel.Accounting" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Clients" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Dispatch" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Divisions" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.JobStatus" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Material" Width="1.5" PointX="0.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Order" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Paids" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.PMS" Width="1.5" PointX="0.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Priority" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Requests" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Technician" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReportModel.Totals" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="ReportModel.FK_Order_Accounting" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Dispatch" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Divisions" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_JobStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_PMS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Requests" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Order_Technician" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Paids_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.FK_Totals_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ReportModel.OrderMaterials" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

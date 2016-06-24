@@ -1,0 +1,79 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "Order";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "OrderViewPartial" };
+		
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "OrderViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "OrderViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "OrderViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+		
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = false;
+        settings.CommandColumn.ShowDeleteButton = false;
+        settings.CommandColumn.ShowEditButton = false;
+				
+		settings.KeyFieldName = "id";
+		
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+		settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off;
+		settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+		settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+		settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+		settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+
+        
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Number";
+            columnCity.FieldName = "number";
+
+         });
+        
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Division";
+            columnCity.FieldName = "divisionId";
+
+        });
+
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Client";
+            columnCity.FieldName = "clientId";
+
+        });
+
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Priority";
+            columnCity.FieldName = "priorityId";
+
+        });
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Request";
+            columnCity.FieldName = "requestId";
+
+        });
+
+        settings.Columns.Add(columnCity =>
+        {
+            columnCity.Caption = "Phone";
+            columnCity.FieldName = "poNumber";
+
+        });		
+				
+				
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+	}
+@grid.Bind(Model).GetHtml()
