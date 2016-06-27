@@ -16,7 +16,7 @@ namespace Orders.Models
     {
         public Dispatch()
         {
-            this.Order = new HashSet<Order>();
+            this.WorkOrder = new HashSet<WorkOrder>();
         }
     
         public int id { get; set; }
@@ -27,6 +27,6 @@ namespace Orders.Models
         public string email { get; set; }
         public string tech { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrder { get; set; }
     }
 }

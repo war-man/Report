@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Orders.Models;
+using DevExpress.Web.Mvc;
+
 
 namespace Orders.Controllers
 {
@@ -18,7 +20,7 @@ namespace Orders.Controllers
 
         public ActionResult Index()
         {
-            var order = db.Order.Include(o => o.Accounting).Include(o => o.Clients).Include(o => o.Dispatch).Include(o => o.Divisions).Include(o => o.JobStatus).Include(o => o.PMS).Include(o => o.Priority).Include(o => o.Requests).Include(o => o.Technician);
+            var order = db.WorkOrder.Include(o => o.Accounting).Include(o => o.Clients).Include(o => o.Dispatch).Include(o => o.Divisions).Include(o => o.JobStatus).Include(o => o.PMS).Include(o => o.Priority).Include(o => o.Requests).Include(o => o.Technician).Include(o => o.Citys);
             return View(order.ToList());
         }
 
@@ -27,7 +29,7 @@ namespace Orders.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Order order = db.Order.Find(id);
+            WorkOrder order = db.WorkOrder.Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -49,6 +51,8 @@ namespace Orders.Controllers
             ViewBag.priorityId = new SelectList(db.Priority, "id", "name");
             ViewBag.requestId = new SelectList(db.Requests, "id", "name");
             ViewBag.technicianId = new SelectList(db.Technician, "id", "notesFromTech");
+            ViewBag.cityId = new SelectList(db.Citys, "id", "name");
+            ViewBag.materials = new SelectList(db.Material, "id", "name");
             return View();
         }
 
@@ -57,11 +61,11 @@ namespace Orders.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Order order)
+        public ActionResult Create(WorkOrder order)
         {
             if (ModelState.IsValid)
             {
-                db.Order.Add(order);
+                db.WorkOrder.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -75,6 +79,8 @@ namespace Orders.Controllers
             ViewBag.priorityId = new SelectList(db.Priority, "id", "name", order.priorityId);
             ViewBag.requestId = new SelectList(db.Requests, "id", "name", order.requestId);
             ViewBag.technicianId = new SelectList(db.Technician, "id", "notesFromTech", order.technicianId);
+            ViewBag.cityId = new SelectList(db.Citys, "id", "name");
+            ViewBag.materials = new SelectList(db.Material, "id", "name");
             return View(order);
         }
 
@@ -83,7 +89,7 @@ namespace Orders.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Order order = db.Order.Find(id);
+            WorkOrder order = db.WorkOrder.Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -105,7 +111,7 @@ namespace Orders.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Order order)
+        public ActionResult Edit(WorkOrder order)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +128,7 @@ namespace Orders.Controllers
             ViewBag.priorityId = new SelectList(db.Priority, "id", "name", order.priorityId);
             ViewBag.requestId = new SelectList(db.Requests, "id", "name", order.requestId);
             ViewBag.technicianId = new SelectList(db.Technician, "id", "notesFromTech", order.technicianId);
+
             return View(order);
         }
 
@@ -130,7 +137,7 @@ namespace Orders.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Order order = db.Order.Find(id);
+            WorkOrder order = db.WorkOrder.Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -145,16 +152,100 @@ namespace Orders.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Order.Find(id);
-            db.Order.Remove(order);
+            WorkOrder order = db.WorkOrder.Find(id);
+            db.WorkOrder.Remove(order);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+
+
+
+
+
+
+
+
+
+        Orders.Models.ReportEntities db1 = new Orders.Models.ReportEntities();
+
+        [ValidateInput(false)]
+        public ActionResult OrderMaterialsViewPartial()
+        {
+            var model = db1.OrderMaterials;
+            return PartialView("_OrderMaterialsViewPartial", model.ToList());
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public ActionResult OrderMaterialsViewPartialAddNew(Orders.Models.OrderMaterials item)
+        {
+            var model = db1.OrderMaterials;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    model.Add(item);
+                    db1.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            else
+                ViewData["EditError"] = "Please, correct all errors.";
+            return PartialView("_OrderMaterialsViewPartial", model.ToList());
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult OrderMaterialsViewPartialUpdate(Orders.Models.OrderMaterials item)
+        {
+            var model = db1.OrderMaterials;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var modelItem = model.FirstOrDefault(it => it.id == item.id);
+                    if (modelItem != null)
+                    {
+                        this.UpdateModel(modelItem);
+                        db1.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            else
+                ViewData["EditError"] = "Please, correct all errors.";
+            return PartialView("_OrderMaterialsViewPartial", model.ToList());
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult OrderMaterialsViewPartialDelete(System.Int32 id)
+        {
+            var model = db1.OrderMaterials;
+            if (id >= 0)
+            {
+                try
+                {
+                    var item = model.FirstOrDefault(it => it.id == id);
+                    if (item != null)
+                        model.Remove(item);
+                    db1.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            return PartialView("_OrderMaterialsViewPartial", model.ToList());
         }
     }
 }

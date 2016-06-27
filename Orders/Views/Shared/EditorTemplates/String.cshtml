@@ -2,9 +2,13 @@
 @{
     Type tModel = ViewData.ModelMetadata.ContainerType.GetProperty(ViewData.ModelMetadata.PropertyName).PropertyType;
 }
-@if(typeof(string).IsAssignableFrom(tModel)) {
+@if (typeof(string).IsAssignableFrom(tModel))
+{
     @Html.DevExpress().TextBoxFor(m => m).GetHtml();
+    
 }
+
+
 else if(typeof(Enum).IsAssignableFrom(tModel)) {
     Html.DevExpress().ComboBoxFor(m => m, s => {
         s.Properties.Items.AddRange(Enum.GetValues(tModel));

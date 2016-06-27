@@ -26,12 +26,13 @@ namespace Orders.Models
         }
     
         public DbSet<Accounting> Accounting { get; set; }
+        public DbSet<Citys> Citys { get; set; }
         public DbSet<Clients> Clients { get; set; }
         public DbSet<Dispatch> Dispatch { get; set; }
         public DbSet<Divisions> Divisions { get; set; }
         public DbSet<JobStatus> JobStatus { get; set; }
         public DbSet<Material> Material { get; set; }
-        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderMaterials> OrderMaterials { get; set; }
         public DbSet<Paids> Paids { get; set; }
         public DbSet<PMS> PMS { get; set; }
         public DbSet<Priority> Priority { get; set; }
@@ -39,5 +40,6 @@ namespace Orders.Models
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Technician> Technician { get; set; }
         public DbSet<Totals> Totals { get; set; }
+        public DbSet<WorkOrder> WorkOrder { get; set; }
     }
 }

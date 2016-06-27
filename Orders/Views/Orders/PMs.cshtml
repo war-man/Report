@@ -1,0 +1,40 @@
+﻿@model Orders.Models.PMS
+
+
+
+
+<div class="form-group group" style="float: left; margin-left: 10px;">
+    <label style="float:left">Section PMs:</label>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.ecoDispatch, "Eco Dispat.")
+        @Html.EditorFor(model => model.ecoDispatch, null, "pmsecoDispatch")
+        @Html.ValidationMessageFor(model => model.ecoDispatch)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.etaPromise, "ETA/Promise")
+        @Html.EditorFor(model => model.etaPromise, null, "pmseta")
+        @Html.ValidationMessageFor(model => model.etaPromise)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.techNTE, "Tech NTE ")
+        @Html.EditorFor(model => model.techNTE, null, "pmstechnte")
+        @Html.ValidationMessageFor(model => model.techNTE)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.dispatchDate, "Dispatch Date")
+        @Html.EditorFor(model => model.dispatchDate, null, "pmsdispatchDate")
+        @Html.ValidationMessageFor(model => model.dispatchDate)
+    </div>
+</div>
+
+   <div class="form-group group" style="float: left; margin-left: 10px; margin-top: -28px;">
+       <div class="form-group" style="float: left; margin-left: 79px">
+           @Html.LabelFor(model => model.dateComp, "Date Comp.")
+           @Html.EditorFor(model => model.dateComp, null, "pmsdateComp")
+           @Html.ValidationMessageFor(model => model.dateComp)
+       </div>
+
+  </div>

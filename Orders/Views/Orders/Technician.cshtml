@@ -1,0 +1,39 @@
+﻿@model Orders.Models.Technician
+
+
+
+  <div class="form-group group" style="float: left; margin-top: 12px; margin-left: 10px;">
+    <label style="float: left">Section Technician:</label>
+
+      <div class="form-group" style="float: left; margin-left: 10px">
+          @Html.LabelFor(model => model.obtainedSig,"Obtained Sig.")
+        @Html.EditorFor(model => model.obtainedSig, null, "techobtainedSig")
+        @Html.ValidationMessageFor(model => model.obtainedSig)
+    </div>
+
+      <div class="form-group" style="float: left; margin-left: 10px">
+          @Html.LabelFor(model => model.notesFromTech, "Notes from Tech")
+          @Html.EditorFor(model => model.notesFromTech, null, "technotesFromTech")
+          @Html.ValidationMessageFor(model => model.notesFromTech)
+      </div>
+
+      <div class="form-group" style="float: left; margin-left: 10px">
+          @Html.LabelFor(model => model.exceededNTE, "Exceeded NTE")
+        @Html.EditorFor(model => model.exceededNTE, null, "techexceededNTE")
+        @Html.ValidationMessageFor(model => model.exceededNTE)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+    @Html.LabelFor(model => model.ProblemFound, "Problem Found")
+    @Html.EditorFor(model => model.ProblemFound, null, "techProblemFound")
+    @Html.ValidationMessageFor(model => model.ProblemFound)
+</div>
+
+      <div class="form-group" style="float: left; margin-left: 10px">
+          @Html.LabelFor(model => model.multipleCheckInOut, "Multiple Check In / Out ")
+          @Html.EditorFor(model => model.multipleCheckInOut, null, "techmultipleCheckInOut")
+          @Html.ValidationMessageFor(model => model.multipleCheckInOut)
+      </div>
+  
+  </div>
+

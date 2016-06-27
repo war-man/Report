@@ -16,16 +16,17 @@ namespace Orders.Models
     {
         public Accounting()
         {
-            this.Order = new HashSet<Order>();
+            this.WorkOrder = new HashSet<WorkOrder>();
         }
     
         public int id { get; set; }
         public string inv { get; set; }
         public string chk { get; set; }
-        public Nullable<double> amtPaid { get; set; }
-        public Nullable<double> invAmt { get; set; }
-        public Nullable<double> disc { get; set; }
+        public Nullable<decimal> amtPaid { get; set; }
+        public Nullable<decimal> invAmt { get; set; }
+        public Nullable<System.DateTime> datePaid { get; set; }
+        public Nullable<decimal> disc { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrder { get; set; }
     }
 }

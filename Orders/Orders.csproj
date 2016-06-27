@@ -179,6 +179,16 @@
   <ItemGroup>
     <Content Include="App_Data\SideMenu.xml" />
     <Content Include="App_Data\TopMenu.xml" />
+    <Content Include="Content\Css\app.min.1.css" />
+    <Content Include="Content\Css\app.min.2.css" />
+    <Content Include="Content\Css\bootstrap.css" />
+    <Content Include="Content\Css\bootstrap.min.css" />
+    <Content Include="Content\Css\jquery.bootgrid.min.css" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\css\material-design-iconic-font.css" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Css\material-icons\fonts\Material-Design-Iconic-Fontf700.svg" />
+    <Content Include="Content\Css\material-icons\material-design-iconic-font.min.css" />
     <Content Include="Content\Images\AquaHeader.jpg" />
     <Content Include="Content\Images\BlackGlassHeader.jpg" />
     <Content Include="Content\Images\GlassHeader.jpg" />
@@ -186,6 +196,83 @@
     <Content Include="Content\Images\RedWineHeader.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Content\Js\bootstrap-datetimepicker\moment-with-locales.js" />
+    <Content Include="Content\Js\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Content\Js\bootstrap.js" />
+    <Content Include="Content\Js\chosen\chosen.jquery.min.js" />
+    <Content Include="Content\Js\growl\javascripts\jquery.growl.js" />
+    <Content Include="Content\Js\growl\stylesheets\jquery.growl.css" />
+    <Content Include="Content\Js\jquery.bootgrid.min.js" />
+    <Content Include="Content\Js\jquery2.1.4.js" />
+    <Content Include="Content\Js\moment.min.js" />
+    <Content Include="Content\Js\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="Content\Js\snarl\snarl.css" />
+    <Content Include="Content\Js\snarl\snarl.js" />
+    <Content Include="Content\Js\snarl\snarl.min.css" />
+    <Content Include="Content\Js\snarl\snarl.min.js" />
+    <Content Include="Content\Js\starter.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\Model.Context.tt">
@@ -193,6 +280,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Model.edmx.sql" />
     <Content Include="Models\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -214,6 +302,17 @@
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="packages.config" />
+    <Content Include="Content\Js\snarl\LICENSE" />
+    <Content Include="Content\Js\snarl\README.md" />
+    <Content Include="Content\Js\snarl\snarl.less" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Css\material-design-iconic-font-v2.2.0\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\Css\material-icons\fonts\Material-Design-Iconic-Fontd41d.eot" />
+    <Content Include="Content\Css\material-icons\fonts\Material-Design-Iconic-Fontf700.eot" />
+    <Content Include="Content\Css\material-icons\fonts\Material-Design-Iconic-Fontf700.ttf" />
+    <Content Include="Content\Css\material-icons\fonts\Material-Design-Iconic-Fontf700.woff" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -238,7 +337,6 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -258,6 +356,27 @@
     <Content Include="Views\Shared\_rootLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\_ClientsViewPartial.cshtml" />
+    <Content Include="Views\Priority\Index.cshtml" />
+    <Content Include="Views\Priority\_PriorityViewPartial.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Requests\_RequestView1Partial.cshtml" />
+    <Content Include="Views\Citys\Index.cshtml" />
+    <Content Include="Views\Citys\_CitysViewPartial.cshtml" />
+    <Content Include="Views\JobStatus\Index.cshtml" />
+    <Content Include="Views\JobStatus\_JobStatusViewPartial.cshtml" />
+    <Content Include="Views\Orders\Paids.cshtml" />
+    <Content Include="Views\Orders\Dispatch.cshtml" />
+    <Content Include="Views\Orders\PMs.cshtml" />
+    <Content Include="Views\Orders\Accounting.cshtml" />
+    <Content Include="Views\Orders\Technician.cshtml" />
+    <Content Include="Views\Orders\Totals1.cshtml" />
+    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\Orders\OrderMaterials.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Materials\_MaterialsViewPartial.cshtml" />
+    <Content Include="Views\Orders\_OrderMaterialsViewPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -271,9 +390,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CitysController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\DataProvider.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobStatusController.cs" />
+    <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PriorityController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,6 +408,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Citys.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Clients.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -312,7 +441,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Order.cs">
+    <Compile Include="Models\OrderMaterials.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Paids.cs">
@@ -334,6 +463,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Totals.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkOrder.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

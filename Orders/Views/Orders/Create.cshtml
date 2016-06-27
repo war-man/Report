@@ -1,285 +1,347 @@
-﻿@using System.Web.Optimization
-@model Orders.Models.Order
+﻿
+
+
+@using System.Web.Optimization
+@model Orders.Models.WorkOrder
 
 @{
     ViewBag.Title = "Create";
+    Random ra = new Random();
 }
 
-<h2>Create</h2>
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+  
 
-    <fieldset>
-        <legend>Order</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.number)
-        </div>
-        <div class="editor-field">
+  <legend>Create Work Order</legend>
+    <div>
+       <input type="text" value="@ra.Next(100000000,112000000)" name="token" id="token">
+        <div class="form-group" style="float: left; margin-top: 12px; margin-left: 10px;">
+            @Html.LabelFor(model => model.number, "Number")
             @Html.EditorFor(model => model.number)
             @Html.ValidationMessageFor(model => model.number)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.divisionId, "Divisions")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("divisionId", String.Empty)
-            @Html.ValidationMessageFor(model => model.divisionId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.clientId, "Clients")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("clientId", String.Empty)
+        <div class="form-group" style="float: left; margin-left: 10px">
+            @Html.LabelFor(model => model.clientId, "Client")
+            @Html.DropDownList("clientId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
             @Html.ValidationMessageFor(model => model.clientId)
         </div>
 
-        <div class="editor-label">
+        <div class="form-group" style="float: left; margin-left: 72px">
             @Html.LabelFor(model => model.priorityId, "Priority")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("priorityId", String.Empty)
+            @Html.DropDownList("priorityId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
             @Html.ValidationMessageFor(model => model.priorityId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.requestId, "Requests")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("requestId", String.Empty)
-            @Html.ValidationMessageFor(model => model.requestId)
+        <div class="form-group" style="float: left; margin-left: 92px">
+            @Html.LabelFor(model => model.clientId, "Division")
+            @Html.DropDownList("divisionId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
+            @Html.ValidationMessageFor(model => model.divisionId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.poNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.poNumber)
-            @Html.ValidationMessageFor(model => model.poNumber)
-        </div>
+    </div>
+    
+    
+    
+  <div style="margin-top: 94px; margin-left: 11px;">
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nte)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nte)
-            @Html.ValidationMessageFor(model => model.nte)
-        </div>
+      <div style="float: left;" class="form-group">
+          @Html.LabelFor(model => model.requestId, "Request Type")
+          @Html.DropDownList("requestId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
+          @Html.ValidationMessageFor(model => model.requestId)
+      </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.jobSite)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.jobSite)
-            @Html.ValidationMessageFor(model => model.jobSite)
-        </div>
+      <div style="float: left; margin-left: 101px; margin-top: 14px;" class="form-group">
+          @Html.LabelFor(model => model.poNumber, "PO#")
+          @Html.EditorFor(model => model.poNumber)
+          @Html.ValidationMessageFor(model => model.poNumber)
+      </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.phone)
-        </div>
-        <div class="editor-field">
+      <div style="float: left; margin-top: 14px; margin-left: 10px;" class="form-group">
+          @Html.LabelFor(model => model.nte, "NTE")
+          @Html.EditorFor(model => model.nte)
+          @Html.ValidationMessageFor(model => model.nte)
+      </div>
+
+      <div style="float: left; margin-top: 14px; margin-left: 10px;" class="form-group">
+          @Html.LabelFor(model => model.jobSite, "Job Site #")
+          @Html.EditorFor(model => model.jobSite)
+          @Html.ValidationMessageFor(model => model.jobSite)
+      </div>
+
+  </div>
+
+
+    <div style="margin-top: 166px; margin-left: 11px;">
+
+        <div style="float: left;" class="form-group">
+            @Html.LabelFor(model => model.phone, "Phone")
             @Html.EditorFor(model => model.phone)
             @Html.ValidationMessageFor(model => model.phone)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.jobSiteContact)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.jobSiteContact, "Job Site Contact")
             @Html.EditorFor(model => model.jobSiteContact)
             @Html.ValidationMessageFor(model => model.jobSiteContact)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.adress)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.adress, "Address")
             @Html.EditorFor(model => model.adress)
             @Html.ValidationMessageFor(model => model.adress)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.city)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.city)
-            @Html.ValidationMessageFor(model => model.city)
+        <div class="form-group" style="float: left; margin-left: 18px; margin-top: -12px;">
+            @Html.LabelFor(model => model.cityId, "City")
+            @Html.DropDownList("cityId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
+            @Html.ValidationMessageFor(model => model.cityId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.stateZip)
-        </div>
-        <div class="editor-field">
+    </div>
+
+    <div style="margin-top: 226px; margin-left: 11px;">
+
+
+        <div style="float: left;" class="form-group">
+            @Html.LabelFor(model => model.stateZip, "State/Zip")
             @Html.EditorFor(model => model.stateZip)
             @Html.ValidationMessageFor(model => model.stateZip)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.siteRegion)
-        </div>
-        <div class="editor-field">
+
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.siteRegion, "Site Region")
             @Html.EditorFor(model => model.siteRegion)
             @Html.ValidationMessageFor(model => model.siteRegion)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.problemType)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.problemType, "Problem Type")
             @Html.EditorFor(model => model.problemType)
             @Html.ValidationMessageFor(model => model.problemType)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.woDate)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.woDate, "WO Date")
             @Html.EditorFor(model => model.woDate)
             @Html.ValidationMessageFor(model => model.woDate)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.requestedBy)
-        </div>
-        <div class="editor-field">
+
+    </div>
+
+    <div style="margin-top: 284px; margin-left: 11px;">
+
+        <div style="float: left;" class="form-group">
+            @Html.LabelFor(model => model.requestedBy, "Requested By")
             @Html.EditorFor(model => model.requestedBy)
             @Html.ValidationMessageFor(model => model.requestedBy)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.jobstatusId, "JobStatus")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("jobstatusId", String.Empty)
+        <div class="form-group" style="float: left; margin-left: 18px; margin-top: -12px;">
+            @Html.LabelFor(model => model.jobstatusId, "Job Status")
+            @Html.DropDownList("jobstatusId", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
             @Html.ValidationMessageFor(model => model.jobstatusId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.dispatchedBy)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 87px" class="form-group">
+            @Html.LabelFor(model => model.dispatchedBy, "Dispatched By")
             @Html.EditorFor(model => model.dispatchedBy)
             @Html.ValidationMessageFor(model => model.dispatchedBy)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.datePromised)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.datePromised, "Date Promised")
             @Html.EditorFor(model => model.datePromised)
             @Html.ValidationMessageFor(model => model.datePromised)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.dateCompleted)
-        </div>
-        <div class="editor-field">
+    </div>
+
+    <div style="margin-top: 344px; margin-left: 11px;">
+
+        <div style="float: left;" class="form-group">
+            @Html.LabelFor(model => model.dateCompleted, "Date Completed")
             @Html.EditorFor(model => model.dateCompleted)
             @Html.ValidationMessageFor(model => model.dateCompleted)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.laborHours)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.laborHours, "Labor Hours")
             @Html.EditorFor(model => model.laborHours)
             @Html.ValidationMessageFor(model => model.laborHours)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.vendor)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.vendor, "Vendor")
             @Html.EditorFor(model => model.vendor)
             @Html.ValidationMessageFor(model => model.vendor)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.techPhone)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.techPhone, "Tech/Phone")
             @Html.EditorFor(model => model.techPhone)
             @Html.ValidationMessageFor(model => model.techPhone)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.fax)
-        </div>
-        <div class="editor-field">
+        <div style="float: left; margin-left: 10px" class="form-group">
+            @Html.LabelFor(model => model.fax,"Fax")
             @Html.EditorFor(model => model.fax)
             @Html.ValidationMessageFor(model => model.fax)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.jobdescription)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.jobdescription)
+
+    </div>
+
+    <div style="margin-top: 402px !important; margin-left: 11px;" class="group">
+        @{
+            Html.RenderPartial("Paids");
+         }
+    </div>
+
+    <div style="margin-top: 487px !important; margin-left: 11px;">
+        <div style="float: left" class="form-group">
+            @Html.LabelFor(model => model.jobdescription, "Job Description")
+            @Html.TextAreaFor(model => model.jobdescription, new {@class = "textarea"})
             @Html.ValidationMessageFor(model => model.jobdescription)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.dispatchId, "Dispatch")
+        <div style="float: left;margin-left: 10px " class="form-group">
+            @Html.LabelFor(model => model.multimpleassets, "Multiple Assets")
+            @Html.TextAreaFor(model => model.multimpleassets, new { @class = "textarea" })
+            @Html.ValidationMessageFor(model => model.multimpleassets)
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("dispatchId", String.Empty)
-            @Html.ValidationMessageFor(model => model.dispatchId)
-        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.pmsId, "PMS")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("pmsId", String.Empty)
-            @Html.ValidationMessageFor(model => model.pmsId)
-        </div>
+    
+    <div style="margin-top: 636px !important; margin-left: 11px;" class="group">
+        @{
+            Html.RenderPartial("Dispatch");
+        }
+    </div>
+    <div style="margin-top: 766px; margin-left: 11px;" class="group">
+    @{
+    Html.RenderPartial("PMs");
+    }
+    </div>
+      <div style="margin-top: 866px; margin-left: 11px;" class="group">
+    @{
+    Html.RenderPartial("Accounting");
+    }
+    </div>
+    <div style="margin-top: 966px; margin-left: 11px;" class="group">
+        @{
+            Html.RenderPartial("Technician");
+        }
+    </div>
+    
+  <div style="margin-top: 1096px; margin-left: 10px;" class="group">
+       <div class="form-group group" style="float: left; margin-left: 10px">
+           @Html.LabelFor(model => model.labor, "Labor")
+           @Html.EditorFor(model => model.labor)
+           @Html.ValidationMessageFor(model => model.labor)
+       </div>
+ </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.accountingId, "Accounting")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("accountingId", String.Empty)
-            @Html.ValidationMessageFor(model => model.accountingId)
-        </div>
+    <div style="margin-top: 1140px; margin-left: 11px;" class="group">
+        @{
+            Html.RenderPartial("Totals1");
+        }
+    </div>
+     
+     <div style="margin-top: 1294px; margin-left: 21px;" class="group">
+         @*@{
+       Html.RenderPartial("OrderMaterials");
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.technicianId, "Technician")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("technicianId", String.Empty)
-            @Html.ValidationMessageFor(model => model.technicianId)
-        </div>
+      }*@
+         @Html.Action("OrderMaterialsViewPartial")
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.labor)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.labor)
-            @Html.ValidationMessageFor(model => model.labor)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.notes)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.notes)
-            @Html.ValidationMessageFor(model => model.notes)
-        </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+
+
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+@Scripts.Render("~/Content/Js/bootstrap.js")
+  
+@Scripts.Render("~/Content/Js/bootstrap-select/bootstrap-select.min.js")
+
+   
+    
+    @Scripts.Render("~/Content/Js/moment.min.js")
+    @Scripts.Render("~/Content/Js/jquery.bootgrid.min.js")
+    @*@Scripts.Render("~/Content/Js/jquery2.1.4.js")*@
+    @Scripts.Render("~/Content/Js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")
+     @Scripts.Render("~/Content/Js/snarl/snarl.js")
+@Scripts.Render("~/Content/Js/growl/javascripts/jquery.growl.js")
+@Scripts.Render("~/Content/Js/chosen/chosen.jquery.min.js")
+@Scripts.Render("~/Content/Js/nicescroll/jquery.nicescroll.min.js")
+@Scripts.Render("~/Content/Js/bootstrap.js")
+@Scripts.Render("~/Content/Js/bootstrap-select/bootstrap-select.min.js")
+
+@Scripts.Render("~/Content/Js/starter.js")
+
 }

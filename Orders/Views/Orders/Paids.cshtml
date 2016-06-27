@@ -1,0 +1,33 @@
+﻿@model Orders.Models.Paids
+
+
+    <div class="form-group group" style="float: left; margin-top: 12px; margin-left: 10px;">
+        <div class="form-group" style="float: left; margin-left: 10px">
+            @Html.LabelFor(model => model.date, "Date to be Paid")
+            @Html.EditorFor(model => model.date,null,"paidsdate")
+            @Html.ValidationMessageFor(model => model.date)
+        </div>
+        <div class="form-group" style="float: left;">
+            @Html.LabelFor(model => model.inv, "INV#")
+            @Html.EditorFor(model => model.inv,null,"paidsinv")
+            @Html.ValidationMessageFor(model => model.inv)
+        </div>
+        <div class="form-group" style="float: left;">
+            @Html.LabelFor(model => model.chk, "Chk#")
+            @Html.EditorFor(model => model.chk, null, "paidschk")
+            @Html.ValidationMessageFor(model => model.chk)
+        </div>
+        <div class="form-group" style="float: left;">
+            @Html.LabelFor(model => model.amtPaid, "Amt Paid")
+            @Html.EditorFor(model => model.amtPaid, null, "paidsamt")
+            @Html.ValidationMessageFor(model => model.amtPaid)
+        </div>
+        <div class="form-group" style="float: left;">
+            @Html.LabelFor(model => model.invAmt, "INV Am")
+            @Html.EditorFor(model => model.invAmt,null,"paidsinvamt")
+            @Html.ValidationMessageFor(model => model.invAmt)
+        </div>
+    </div>
+
+
+

@@ -16,16 +16,16 @@ namespace Orders.Models
     {
         public PMS()
         {
-            this.Order = new HashSet<Order>();
+            this.WorkOrder = new HashSet<WorkOrder>();
         }
     
         public int id { get; set; }
         public string ecoDispatch { get; set; }
         public Nullable<System.DateTime> etaPromise { get; set; }
-        public Nullable<double> techNTE { get; set; }
+        public Nullable<decimal> techNTE { get; set; }
         public Nullable<System.DateTime> dispatchDate { get; set; }
         public Nullable<System.DateTime> dateComp { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrder { get; set; }
     }
 }

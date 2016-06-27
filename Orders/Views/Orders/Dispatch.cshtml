@@ -1,0 +1,46 @@
+﻿@model Orders.Models.Dispatch
+
+
+<div class="form-group group" style="float: left; margin-top: 12px; margin-left: 10px;">
+    <label style="float: left">Dispatch:</label>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.vendor,"Vendor")
+        @Html.EditorFor(model => model.vendor, null, "dispatchvendor")
+        @Html.ValidationMessageFor(model => model.vendor)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px; ">
+        @Html.LabelFor(model => model.dispatcher, "Dispatcher")
+        @Html.EditorFor(model => model.dispatcher, null, "dispatchdispatcher")
+        @Html.ValidationMessageFor(model => model.dispatcher)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px; ">
+        @Html.LabelFor(model => model.phone, "Phone")
+        @Html.EditorFor(model => model.phone, null, "dispatchphone")
+        @Html.ValidationMessageFor(model => model.phone)
+    </div>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.fax, "Fax")
+        @Html.EditorFor(model => model.fax, null, "dispatchfax")
+        @Html.ValidationMessageFor(model => model.fax)
+    </div>
+
+</div>
+
+<div class="form-group group" style="float: left; margin-left: 10px; margin-top: -28px;">
+    <div class="form-group" style="float: left; margin-left: 53px">
+        @Html.LabelFor(model => model.email, "Email")
+        @Html.EditorFor(model => model.email, null, "dispatchemail")
+        @Html.ValidationMessageFor(model => model.email)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px; ">
+        @Html.LabelFor(model => model.tech, "Tech")
+        @Html.EditorFor(model => model.tech, null, "dispatchtech")
+        @Html.ValidationMessageFor(model => model.tech)
+    </div>
+
+</div>
+
+

@@ -1,4 +1,4 @@
-﻿@model Orders.Models.Order
+﻿@model Orders.Models.WorkOrder
 
 @{
     ViewBag.Title = "Details";
@@ -87,10 +87,10 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.city)
+         @Html.DisplayNameFor(model => model.cityId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.city)
+        @Html.DisplayFor(model => model.cityId)
     </div>
 
     <div class="display-label">

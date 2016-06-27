@@ -6,8 +6,15 @@
     </group>
   <group Text="Entities">
     <item Text="Divisions" NavigateUrl="~/Divisions/Index"/>
-    <item Text="SQL Server 2008" />
-    <item Text="SQL Server 2008 R2" />
+    <item Text="Clients" NavigateUrl="~/Clients/Index"/>
+    <item Text="Priority" NavigateUrl="~/Priority/Index"/>
+    <item Text="Requests Types" NavigateUrl="~/Requests/Index"/>
+    <item Text="Citys" NavigateUrl="~/Citys/Index"/>
+    <item Text="Job Status" NavigateUrl="~/JobStatus/Index"/>
+    <item Text="Materials" NavigateUrl="~/Materials/Index"/>
+    
+
+
   </group>
   
 </menu>

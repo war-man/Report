@@ -16,7 +16,7 @@ namespace Orders.Models
     {
         public Technician()
         {
-            this.Order = new HashSet<Order>();
+            this.WorkOrder = new HashSet<WorkOrder>();
         }
     
         public int id { get; set; }
@@ -26,6 +26,6 @@ namespace Orders.Models
         public string ProblemFound { get; set; }
         public string multipleCheckInOut { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrder { get; set; }
     }
 }

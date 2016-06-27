@@ -16,12 +16,12 @@ namespace Orders.Models
     {
         public JobStatus()
         {
-            this.Order = new HashSet<Order>();
+            this.WorkOrder = new HashSet<WorkOrder>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrder { get; set; }
     }
 }

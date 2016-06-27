@@ -15,19 +15,19 @@ namespace Orders.Models
     public partial class Totals
     {
         public int id { get; set; }
-        public Nullable<double> totalTechs { get; set; }
-        public Nullable<double> totalHours { get; set; }
-        public Nullable<double> trip { get; set; }
-        public Nullable<double> totalLabor { get; set; }
-        public Nullable<double> tax { get; set; }
-        public Nullable<double> totalItems { get; set; }
-        public Nullable<double> totalMaterials { get; set; }
-        public Nullable<double> taxMaterials { get; set; }
-        public Nullable<double> grandTotal { get; set; }
-        public Nullable<double> totalDiscount { get; set; }
-        public Nullable<double> toalThisPropsal { get; set; }
+        public Nullable<decimal> totalTechs { get; set; }
+        public Nullable<decimal> totalHours { get; set; }
+        public Nullable<decimal> trip { get; set; }
+        public Nullable<decimal> totalLabor { get; set; }
+        public Nullable<decimal> tax { get; set; }
+        public Nullable<decimal> totalItems { get; set; }
+        public Nullable<decimal> totalMaterials { get; set; }
+        public Nullable<decimal> taxMaterials { get; set; }
+        public Nullable<decimal> grandTotal { get; set; }
+        public Nullable<decimal> totalDiscount { get; set; }
+        public Nullable<decimal> toalThisPropsal { get; set; }
         public int orderid { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
     }
 }

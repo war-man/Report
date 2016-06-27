@@ -16,12 +16,12 @@ namespace Orders.Models
     {
         public Material()
         {
-            this.Order = new HashSet<Order>();
+            this.OrderMaterials = new HashSet<OrderMaterials>();
         }
     
-        public int id { get; set; }
+        public int Material_id { get; set; }
         public string name { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<OrderMaterials> OrderMaterials { get; set; }
     }
 }

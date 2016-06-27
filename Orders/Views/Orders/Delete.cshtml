@@ -1,4 +1,4 @@
-﻿@model Orders.Models.Order
+﻿@model Orders.Models.WorkOrder
 
 @{
     ViewBag.Title = "Delete";
@@ -18,31 +18,31 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Divisions.name)
+         @Html.DisplayNameFor(model => model.divisionId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Divisions.name)
+        @Html.DisplayFor(model => model.divisionId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Clients.name)
+         @Html.DisplayNameFor(model => model.clientId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Clients.name)
+        @Html.DisplayFor(model => model.clientId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Priority.name)
+         @Html.DisplayNameFor(model => model.priorityId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Priority.name)
+        @Html.DisplayFor(model => model.priorityId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Requests.name)
+         @Html.DisplayNameFor(model => model.requestId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Requests.name)
+        @Html.DisplayFor(model => model.requestId)
     </div>
 
     <div class="display-label">
@@ -88,13 +88,6 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.city)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.city)
-    </div>
-
-    <div class="display-label">
          @Html.DisplayNameFor(model => model.stateZip)
     </div>
     <div class="display-field">
@@ -130,10 +123,10 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.JobStatus.name)
+         @Html.DisplayNameFor(model => model.jobstatusId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.JobStatus.name)
+        @Html.DisplayFor(model => model.jobstatusId)
     </div>
 
     <div class="display-label">
@@ -193,31 +186,31 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Dispatch.vendor)
+         @Html.DisplayNameFor(model => model.dispatchId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Dispatch.vendor)
+        @Html.DisplayFor(model => model.dispatchId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.PMS.ecoDispatch)
+         @Html.DisplayNameFor(model => model.pmsId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.PMS.ecoDispatch)
+        @Html.DisplayFor(model => model.pmsId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Accounting.inv)
+         @Html.DisplayNameFor(model => model.accountingId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Accounting.inv)
+        @Html.DisplayFor(model => model.accountingId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Technician.notesFromTech)
+         @Html.DisplayNameFor(model => model.technicianId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Technician.notesFromTech)
+        @Html.DisplayFor(model => model.technicianId)
     </div>
 
     <div class="display-label">
@@ -232,6 +225,20 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.notes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cityId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cityId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.multimpleassets)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.multimpleassets)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {

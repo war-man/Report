@@ -18,10 +18,10 @@ namespace Orders.Models
         public Nullable<System.DateTime> date { get; set; }
         public string inv { get; set; }
         public string chk { get; set; }
-        public Nullable<double> amtPaid { get; set; }
-        public Nullable<double> invAmt { get; set; }
+        public Nullable<decimal> amtPaid { get; set; }
+        public Nullable<decimal> invAmt { get; set; }
         public Nullable<int> orderId { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual WorkOrder WorkOrder { get; set; }
     }
 }

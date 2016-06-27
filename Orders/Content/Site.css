@@ -811,3 +811,22 @@
 {
     background: #F1F2F5;
 }
+
+
+
+.tag-select {
+  
+}
+
+.tabla td {
+    width: 100%;
+}
+.group {
+    background-color: #E5E5E5;
+    width: 897px !important;
+}
+
+.textarea {
+    width: 362px;;
+    height: 135px;
+}

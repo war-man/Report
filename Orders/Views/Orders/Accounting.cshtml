@@ -1,0 +1,47 @@
+﻿@model Orders.Models.Accounting
+
+
+
+<div class="form-group group" style="float: left; margin-top: 12px; margin-left: 10px;">
+    <label style="float: left">Section Accounting:</label>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.datePaid, "Date Paid")
+        @Html.EditorFor(model => model.datePaid, null, "accdatePaid")
+        @Html.ValidationMessageFor(model => model.datePaid)
+    </div>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.inv, "INV # ")
+        @Html.EditorFor(model => model.inv, null, "accinv")
+        @Html.ValidationMessageFor(model => model.inv)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.chk, "Chk # ")
+        @Html.EditorFor(model => model.chk, null, "accchk")
+        @Html.ValidationMessageFor(model => model.chk)
+    </div>
+
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.amtPaid, "Amt Paid")
+        @Html.EditorFor(model => model.amtPaid, null, "accamtPaid")
+        @Html.ValidationMessageFor(model => model.amtPaid)
+    </div>
+</div>
+
+
+<div class="form-group group" style="float: left; margin-left: 10px; margin-top: -28px;">
+    <div class="form-group" style="float: left; margin-left: 119px">
+            @Html.LabelFor(model => model.invAmt, "INV Amt")
+            @Html.EditorFor(model => model.invAmt, null, "accinvAmt")
+            @Html.ValidationMessageFor(model => model.invAmt)
+        </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.disc, "Disc")
+        @Html.EditorFor(model => model.disc, null, "accdisc")
+        @Html.ValidationMessageFor(model => model.disc)
+    </div>
+
+    </div>
+

@@ -7,16 +7,24 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="inv" Type="nchar" MaxLength="20" />
     <Property Name="chk" Type="nchar" MaxLength="20" />
-    <Property Name="amtPaid" Type="float" />
-    <Property Name="invAmt" Type="float" />
-    <Property Name="disc" Type="float" />
+    <Property Name="amtPaid" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="invAmt" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="datePaid" Type="datetime" />
+    <Property Name="disc" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Citys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="Clients">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Dispatch">
     <Key>
@@ -27,7 +35,7 @@
     <Property Name="dispatcher" Type="nchar" MaxLength="60" />
     <Property Name="phone" Type="nchar" MaxLength="40" />
     <Property Name="fax" Type="nchar" MaxLength="40" />
-    <Property Name="email" Type="text" />
+    <Property Name="email" Type="varchar(max)" />
     <Property Name="tech" Type="nchar" MaxLength="40" />
   </EntityType>
   <EntityType Name="Divisions">
@@ -35,67 +43,30 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="JobStatus">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Material">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Material_id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="number" Type="nchar" MaxLength="50" />
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="divisionId" Type="int" />
-    <Property Name="clientId" Type="int" />
-    <Property Name="priorityId" Type="int" />
-    <Property Name="requestId" Type="int" />
-    <Property Name="poNumber" Type="nchar" MaxLength="20" />
-    <Property Name="nte" Type="nchar" MaxLength="20" />
-    <Property Name="jobSite" Type="nchar" MaxLength="20" />
-    <Property Name="phone" Type="nchar" MaxLength="40" />
-    <Property Name="jobSiteContact" Type="text" />
-    <Property Name="adress" Type="text" />
-    <Property Name="city" Type="nchar" MaxLength="40" />
-    <Property Name="stateZip" Type="nchar" MaxLength="40" />
-    <Property Name="siteRegion" Type="nchar" MaxLength="40" />
-    <Property Name="problemType" Type="text" />
-    <Property Name="woDate" Type="datetime" />
-    <Property Name="requestedBy" Type="nchar" MaxLength="80" />
-    <Property Name="jobstatusId" Type="int" />
-    <Property Name="dispatchedBy" Type="nchar" MaxLength="80" />
-    <Property Name="datePromised" Type="datetime" />
-    <Property Name="dateCompleted" Type="datetime" />
-    <Property Name="laborHours" Type="float" />
-    <Property Name="vendor" Type="text" />
-    <Property Name="techPhone" Type="nchar" MaxLength="40" />
-    <Property Name="fax" Type="nchar" MaxLength="40" />
-    <Property Name="jobdescription" Type="text" />
-    <Property Name="dispatchId" Type="int" />
-    <Property Name="pmsId" Type="int" />
-    <Property Name="accountingId" Type="int" />
-    <Property Name="technicianId" Type="int" />
-    <Property Name="labor" Type="nchar" MaxLength="40" />
-    <Property Name="notes" Type="text" />
+    <Property Name="Material_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderMaterials">
     <Key>
-      <PropertyRef Name="orderId" />
-      <PropertyRef Name="materialtid" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="orderId" Type="int" Nullable="false" />
-    <Property Name="materialtid" Type="int" Nullable="false" />
+    <Property Name="Material_id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_id" Type="int" />
   </EntityType>
   <EntityType Name="Paids">
     <Key>
@@ -105,8 +76,8 @@
     <Property Name="date" Type="datetime" />
     <Property Name="inv" Type="nchar" MaxLength="50" />
     <Property Name="chk" Type="nchar" MaxLength="50" />
-    <Property Name="amtPaid" Type="float" />
-    <Property Name="invAmt" Type="float" />
+    <Property Name="amtPaid" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="invAmt" Type="decimal" Precision="18" Scale="0" />
     <Property Name="orderId" Type="int" />
   </EntityType>
   <EntityType Name="PMS">
@@ -116,7 +87,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ecoDispatch" Type="nchar" MaxLength="40" />
     <Property Name="etaPromise" Type="datetime" />
-    <Property Name="techNTE" Type="float" />
+    <Property Name="techNTE" Type="decimal" Precision="18" Scale="0" />
     <Property Name="dispatchDate" Type="datetime" />
     <Property Name="dateComp" Type="datetime" />
   </EntityType>
@@ -125,14 +96,14 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Requests">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="text" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -150,166 +121,217 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="obtainedSig" Type="bit" />
-    <Property Name="notesFromTech" Type="text" />
+    <Property Name="notesFromTech" Type="varchar(max)" />
     <Property Name="exceededNTE" Type="bit" />
-    <Property Name="ProblemFound" Type="text" />
-    <Property Name="multipleCheckInOut" Type="text" />
+    <Property Name="ProblemFound" Type="varchar(max)" />
+    <Property Name="multipleCheckInOut" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Totals">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="totalTechs" Type="float" />
-    <Property Name="totalHours" Type="float" />
-    <Property Name="trip" Type="float" />
-    <Property Name="totalLabor" Type="float" />
-    <Property Name="tax" Type="float" />
-    <Property Name="totalItems" Type="float" />
-    <Property Name="totalMaterials" Type="float" />
-    <Property Name="taxMaterials" Type="float" />
-    <Property Name="grandTotal" Type="float" />
-    <Property Name="totalDiscount" Type="float" />
-    <Property Name="toalThisPropsal" Type="float" />
+    <Property Name="totalTechs" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalHours" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="trip" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalLabor" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="tax" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalItems" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalMaterials" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="taxMaterials" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="grandTotal" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalDiscount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="toalThisPropsal" Type="decimal" Precision="18" Scale="0" />
     <Property Name="orderid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="number" Type="nchar" MaxLength="50" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="divisionId" Type="int" />
+    <Property Name="clientId" Type="int" />
+    <Property Name="priorityId" Type="int" />
+    <Property Name="requestId" Type="int" />
+    <Property Name="poNumber" Type="nchar" MaxLength="20" />
+    <Property Name="nte" Type="nchar" MaxLength="20" />
+    <Property Name="jobSite" Type="nchar" MaxLength="20" />
+    <Property Name="phone" Type="nchar" MaxLength="40" />
+    <Property Name="jobSiteContact" Type="varchar(max)" />
+    <Property Name="adress" Type="varchar(max)" />
+    <Property Name="cityId" Type="int" />
+    <Property Name="stateZip" Type="nchar" MaxLength="40" />
+    <Property Name="siteRegion" Type="nchar" MaxLength="40" />
+    <Property Name="problemType" Type="varchar(max)" />
+    <Property Name="woDate" Type="datetime" />
+    <Property Name="requestedBy" Type="nchar" MaxLength="80" />
+    <Property Name="jobstatusId" Type="int" />
+    <Property Name="dispatchedBy" Type="nchar" MaxLength="80" />
+    <Property Name="datePromised" Type="datetime" />
+    <Property Name="dateCompleted" Type="datetime" />
+    <Property Name="laborHours" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="vendor" Type="varchar(max)" />
+    <Property Name="techPhone" Type="nchar" MaxLength="40" />
+    <Property Name="fax" Type="nchar" MaxLength="40" />
+    <Property Name="jobdescription" Type="varchar(max)" />
+    <Property Name="dispatchId" Type="int" />
+    <Property Name="pmsId" Type="int" />
+    <Property Name="accountingId" Type="int" />
+    <Property Name="technicianId" Type="int" />
+    <Property Name="labor" Type="nchar" MaxLength="40" />
+    <Property Name="multimpleassets" Type="text" />
+    <Property Name="notes" Type="varchar(max)" />
   </EntityType>
   <Association Name="FK_Order_Accounting">
     <End Role="Accounting" Type="Self.Accounting" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Accounting">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="accountingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Citys">
+    <End Role="Citys" Type="Self.Citys" Multiplicity="0..1" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citys">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="cityId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Clients">
     <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clients">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="clientId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Dispatch">
     <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Dispatch">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="dispatchId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Divisions">
     <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Divisions">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="divisionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_JobStatus">
     <End Role="JobStatus" Type="Self.JobStatus" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="JobStatus">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="jobstatusId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_PMS">
     <End Role="PMS" Type="Self.PMS" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PMS">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="pmsId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Priority">
     <End Role="Priority" Type="Self.Priority" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Priority">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="priorityId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Requests">
     <End Role="Requests" Type="Self.Requests" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Requests">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="requestId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Order_Technician">
     <End Role="Technician" Type="Self.Technician" Multiplicity="0..1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Technician">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="WorkOrder">
         <PropertyRef Name="technicianId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_OrderAssets_Assets">
+  <Association Name="FK_OrderMaterials_Material">
     <End Role="Material" Type="Self.Material" Multiplicity="1" />
     <End Role="OrderMaterials" Type="Self.OrderMaterials" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Material">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="Material_id" />
       </Principal>
       <Dependent Role="OrderMaterials">
-        <PropertyRef Name="materialtid" />
+        <PropertyRef Name="Material_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_OrderAssets_Order">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+  <Association Name="FK_OrderMaterials_Order">
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
     <End Role="OrderMaterials" Type="Self.OrderMaterials" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Order">
+      <Principal Role="WorkOrder">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="OrderMaterials">
-        <PropertyRef Name="orderId" />
+        <PropertyRef Name="Order_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Paids_Order">
-    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
     <End Role="Paids" Type="Self.Paids" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Order">
+      <Principal Role="WorkOrder">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Paids">
@@ -318,10 +340,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Totals_Order">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="1" />
     <End Role="Totals" Type="Self.Totals" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Order">
+      <Principal Role="WorkOrder">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="Totals">
@@ -331,12 +353,12 @@
   </Association>
   <EntityContainer Name="ReportModelStoreContainer">
     <EntitySet Name="Accounting" EntityType="Self.Accounting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Citys" EntityType="Self.Citys" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dispatch" EntityType="Self.Dispatch" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobStatus" EntityType="Self.JobStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderMaterials" EntityType="Self.OrderMaterials" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Paids" EntityType="Self.Paids" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PMS" EntityType="Self.PMS" Schema="dbo" store:Type="Tables" />
@@ -345,56 +367,61 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Technician" EntityType="Self.Technician" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Totals" EntityType="Self.Totals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrder" EntityType="Self.WorkOrder" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Order_Accounting" Association="Self.FK_Order_Accounting">
       <End Role="Accounting" EntitySet="Accounting" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Citys" Association="Self.FK_Order_Citys">
+      <End Role="Citys" EntitySet="Citys" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Clients" Association="Self.FK_Order_Clients">
       <End Role="Clients" EntitySet="Clients" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Dispatch" Association="Self.FK_Order_Dispatch">
       <End Role="Dispatch" EntitySet="Dispatch" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Divisions" Association="Self.FK_Order_Divisions">
       <End Role="Divisions" EntitySet="Divisions" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_JobStatus" Association="Self.FK_Order_JobStatus">
       <End Role="JobStatus" EntitySet="JobStatus" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_PMS" Association="Self.FK_Order_PMS">
       <End Role="PMS" EntitySet="PMS" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Priority" Association="Self.FK_Order_Priority">
       <End Role="Priority" EntitySet="Priority" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Requests" Association="Self.FK_Order_Requests">
       <End Role="Requests" EntitySet="Requests" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
     <AssociationSet Name="FK_Order_Technician" Association="Self.FK_Order_Technician">
       <End Role="Technician" EntitySet="Technician" />
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
     </AssociationSet>
-    <AssociationSet Name="FK_OrderAssets_Assets" Association="Self.FK_OrderAssets_Assets">
+    <AssociationSet Name="FK_OrderMaterials_Material" Association="Self.FK_OrderMaterials_Material">
       <End Role="Material" EntitySet="Material" />
       <End Role="OrderMaterials" EntitySet="OrderMaterials" />
     </AssociationSet>
-    <AssociationSet Name="FK_OrderAssets_Order" Association="Self.FK_OrderAssets_Order">
-      <End Role="Order" EntitySet="Order" />
+    <AssociationSet Name="FK_OrderMaterials_Order" Association="Self.FK_OrderMaterials_Order">
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
       <End Role="OrderMaterials" EntitySet="OrderMaterials" />
     </AssociationSet>
     <AssociationSet Name="FK_Paids_Order" Association="Self.FK_Paids_Order">
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
       <End Role="Paids" EntitySet="Paids" />
     </AssociationSet>
     <AssociationSet Name="FK_Totals_Order" Association="Self.FK_Totals_Order">
-      <End Role="Order" EntitySet="Order" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
       <End Role="Totals" EntitySet="Totals" />
     </AssociationSet>
   </EntityContainer>

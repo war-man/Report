@@ -1,4 +1,5 @@
-﻿@model Orders.Models.Order
+﻿@using System.Web.Optimization
+@model Orders.Models.WorkOrder
 
 @{
     ViewBag.Title = "Edit";
@@ -104,11 +105,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.city)
+            @Html.LabelFor(model => model.cityId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.city)
-            @Html.ValidationMessageFor(model => model.city)
+            @Html.EditorFor(model => model.cityId)
+            @Html.ValidationMessageFor(model => model.cityId)
         </div>
 
         <div class="editor-label">

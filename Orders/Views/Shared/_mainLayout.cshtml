@@ -1,6 +1,15 @@
 @using System.Web.Optimization
 @{ Layout = "~/Views/Shared/_rootLayout.cshtml"; }
 
+@Styles.Render("~/Content/Css/app.min.1.css")
+@Styles.Render("~/Content/Css/app.min.2.css")
+@Styles.Render("~/Content/Css/bootstrap.min.css")
+@Styles.Render("~/Content/Css/jquery.bootgrid.min.css")
+@Styles.Render("~/Content/Js/snarl/snarl.min.css")
+@Styles.Render("~/Content/Js/growl/stylesheets/jquery.growl.css")
+@Styles.Render("~/Content/Css/material-icons/material-design-iconic-font.min.css")
+@Styles.Render("~/Content/Css/material-design-iconic-font-v2.2.0/css/material-design-iconic-font.min.css")
+
 @Html.DevExpress().Splitter(settings => {
     settings.Name = "ContentSplitter";
     settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
@@ -33,5 +42,5 @@
 }).GetHtml()
 
 
-@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
 @RenderSection("scripts", required: false)

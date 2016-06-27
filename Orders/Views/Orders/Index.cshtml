@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Orders.Models.Order>
+﻿@model IEnumerable<Orders.Models.WorkOrder>
 
 @{
     ViewBag.Title = "Index";
@@ -45,7 +45,7 @@
             @Html.DisplayNameFor(model => model.adress)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.city)
+            @Html.DisplayNameFor(model => model.cityId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.stateZip)
@@ -146,7 +146,7 @@
             @Html.DisplayFor(modelItem => item.adress)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.city)
+            @Html.DisplayFor(modelItem => item.cityId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.stateZip)

@@ -9,7 +9,16 @@
           <ScalarProperty Name="chk" ColumnName="chk" />
           <ScalarProperty Name="amtPaid" ColumnName="amtPaid" />
           <ScalarProperty Name="invAmt" ColumnName="invAmt" />
+          <ScalarProperty Name="datePaid" ColumnName="datePaid" />
           <ScalarProperty Name="disc" ColumnName="disc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citys">
+      <EntityTypeMapping TypeName="ReportModel.Citys">
+        <MappingFragment StoreEntitySet="Citys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -53,47 +62,18 @@
     <EntitySetMapping Name="Material">
       <EntityTypeMapping TypeName="ReportModel.Material">
         <MappingFragment StoreEntitySet="Material">
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Material_id" ColumnName="Material_id" />
           <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Order">
-      <EntityTypeMapping TypeName="ReportModel.Order">
-        <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="number" ColumnName="number" />
+    <EntitySetMapping Name="OrderMaterials">
+      <EntityTypeMapping TypeName="ReportModel.OrderMaterials">
+        <MappingFragment StoreEntitySet="OrderMaterials">
+          <ScalarProperty Name="Material_id" ColumnName="Material_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="divisionId" ColumnName="divisionId" />
-          <ScalarProperty Name="clientId" ColumnName="clientId" />
-          <ScalarProperty Name="priorityId" ColumnName="priorityId" />
-          <ScalarProperty Name="requestId" ColumnName="requestId" />
-          <ScalarProperty Name="poNumber" ColumnName="poNumber" />
-          <ScalarProperty Name="nte" ColumnName="nte" />
-          <ScalarProperty Name="jobSite" ColumnName="jobSite" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="jobSiteContact" ColumnName="jobSiteContact" />
-          <ScalarProperty Name="adress" ColumnName="adress" />
-          <ScalarProperty Name="city" ColumnName="city" />
-          <ScalarProperty Name="stateZip" ColumnName="stateZip" />
-          <ScalarProperty Name="siteRegion" ColumnName="siteRegion" />
-          <ScalarProperty Name="problemType" ColumnName="problemType" />
-          <ScalarProperty Name="woDate" ColumnName="woDate" />
-          <ScalarProperty Name="requestedBy" ColumnName="requestedBy" />
-          <ScalarProperty Name="jobstatusId" ColumnName="jobstatusId" />
-          <ScalarProperty Name="dispatchedBy" ColumnName="dispatchedBy" />
-          <ScalarProperty Name="datePromised" ColumnName="datePromised" />
-          <ScalarProperty Name="dateCompleted" ColumnName="dateCompleted" />
-          <ScalarProperty Name="laborHours" ColumnName="laborHours" />
-          <ScalarProperty Name="vendor" ColumnName="vendor" />
-          <ScalarProperty Name="techPhone" ColumnName="techPhone" />
-          <ScalarProperty Name="fax" ColumnName="fax" />
-          <ScalarProperty Name="jobdescription" ColumnName="jobdescription" />
-          <ScalarProperty Name="dispatchId" ColumnName="dispatchId" />
-          <ScalarProperty Name="pmsId" ColumnName="pmsId" />
-          <ScalarProperty Name="accountingId" ColumnName="accountingId" />
-          <ScalarProperty Name="technicianId" ColumnName="technicianId" />
-          <ScalarProperty Name="labor" ColumnName="labor" />
-          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="Order_id" ColumnName="Order_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -180,13 +160,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="OrderMaterials" TypeName="ReportModel.OrderMaterials" StoreEntitySet="OrderMaterials">
-      <EndProperty Name="Material">
-        <ScalarProperty Name="id" ColumnName="materialtid" />
-      </EndProperty>
-      <EndProperty Name="Order">
-        <ScalarProperty Name="id" ColumnName="orderId" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="WorkOrder">
+      <EntityTypeMapping TypeName="ReportModel.WorkOrder">
+        <MappingFragment StoreEntitySet="WorkOrder">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="divisionId" ColumnName="divisionId" />
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+          <ScalarProperty Name="priorityId" ColumnName="priorityId" />
+          <ScalarProperty Name="requestId" ColumnName="requestId" />
+          <ScalarProperty Name="poNumber" ColumnName="poNumber" />
+          <ScalarProperty Name="nte" ColumnName="nte" />
+          <ScalarProperty Name="jobSite" ColumnName="jobSite" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="jobSiteContact" ColumnName="jobSiteContact" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="stateZip" ColumnName="stateZip" />
+          <ScalarProperty Name="siteRegion" ColumnName="siteRegion" />
+          <ScalarProperty Name="problemType" ColumnName="problemType" />
+          <ScalarProperty Name="woDate" ColumnName="woDate" />
+          <ScalarProperty Name="requestedBy" ColumnName="requestedBy" />
+          <ScalarProperty Name="jobstatusId" ColumnName="jobstatusId" />
+          <ScalarProperty Name="dispatchedBy" ColumnName="dispatchedBy" />
+          <ScalarProperty Name="datePromised" ColumnName="datePromised" />
+          <ScalarProperty Name="dateCompleted" ColumnName="dateCompleted" />
+          <ScalarProperty Name="laborHours" ColumnName="laborHours" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="techPhone" ColumnName="techPhone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="jobdescription" ColumnName="jobdescription" />
+          <ScalarProperty Name="dispatchId" ColumnName="dispatchId" />
+          <ScalarProperty Name="pmsId" ColumnName="pmsId" />
+          <ScalarProperty Name="accountingId" ColumnName="accountingId" />
+          <ScalarProperty Name="technicianId" ColumnName="technicianId" />
+          <ScalarProperty Name="labor" ColumnName="labor" />
+          <ScalarProperty Name="multimpleassets" ColumnName="multimpleassets" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

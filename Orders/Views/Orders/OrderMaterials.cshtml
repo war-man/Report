@@ -1,0 +1,27 @@
+﻿@model Orders.Models.OrderMaterials
+
+
+
+
+<div class="form-group group" style="float: left; margin-top: 12px; margin-left: 10px;">
+    <label style="float:left">Materials:</label>
+    <div class="form-group" style="float: left; margin-left: 10px">
+        @Html.LabelFor(model => model.Material, "Material")
+        @Html.DropDownList("materials", null, htmlAttributes: new {@class = "tag-select", @style = "display:none"})
+
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 83px">
+        @Html.LabelFor(model => model.quantity, "Quantity")
+        @Html.EditorFor(model => model.quantity)
+        @Html.ValidationMessageFor(model => model.quantity)
+    </div>
+
+    <div class="form-group" style="float: left; margin-left: 10px; margin-top: 13px;">
+        <a class="btn btn-default small" id="AddMaterial">+</a>
+    </div>
+
+</div>
+
+
+

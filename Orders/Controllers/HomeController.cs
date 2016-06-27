@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DevExpress.Web.Mvc;
+using Orders.Models;
 
 namespace Orders.Controllers
 {
@@ -23,14 +24,14 @@ namespace Orders.Controllers
         [ValidateInput(false)]
         public ActionResult OrderViewPartial()
         {
-            var model = db.Order;
+            var model = db.WorkOrder;
             return PartialView("_OrderViewPartial", model.ToList());
         }
 
         [HttpPost, ValidateInput(false)]
-        public ActionResult OrderViewPartialAddNew(Orders.Models.Order item)
+        public ActionResult OrderViewPartialAddNew(WorkOrder item)
         {
-            var model = db.Order;
+            var model = db.WorkOrder;
             if (ModelState.IsValid)
             {
                 try
@@ -48,9 +49,9 @@ namespace Orders.Controllers
             return PartialView("_OrderViewPartial", model.ToList());
         }
         [HttpPost, ValidateInput(false)]
-        public ActionResult OrderViewPartialUpdate(Orders.Models.Order item)
+        public ActionResult OrderViewPartialUpdate(WorkOrder item)
         {
-            var model = db.Order;
+            var model = db.WorkOrder;
             if (ModelState.IsValid)
             {
                 try
@@ -74,7 +75,7 @@ namespace Orders.Controllers
         [HttpPost, ValidateInput(false)]
         public ActionResult OrderViewPartialDelete(System.Int32 id)
         {
-            var model = db.Order;
+            var model = db.WorkOrder;
             if (id >= 0)
             {
                 try
